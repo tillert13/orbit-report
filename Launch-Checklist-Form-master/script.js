@@ -13,11 +13,17 @@ window.addEventListener("load", function () {
       updatedCopilot.innerText = `Co-pilot: ${copilotNameInput.value} is ready`;
       launchStatus.innerText = 'Shuttle is ready for launch';
       launchStatus.style.color = 'green';
+      fuelStatus.innerText = 'Fuel level high enough for launch';
+      cargoStatus.innerText = 'Cargo mass low enough for launch';
+      event.preventDefault();
       if (pilotNameInput.value === "" || copilotNameInput.value === "" || fuelLevelInput.value === "" || cargoMassInput.value === "") {
          alert("All fields are required!");
          event.preventDefault();
       } else if (isNaN(pilotNameInput.value) === false || isNaN(copilotNameInput.value) === false || isNaN(fuelLevelInput.value) === true || isNaN(cargoMassInput.value) === true) {
          alert("Please enter valid information!");
+         updatedVisibilty.style.visibility = 'visible';
+         launchStatus.innerText = 'Shuttle not ready for launch';
+         launchStatus.style.color = 'red';
          event.preventDefault();
       }
       if (fuelLevelInput.value < 10000) {
