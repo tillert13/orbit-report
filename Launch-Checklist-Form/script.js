@@ -13,6 +13,7 @@ window.addEventListener("load", function () {
       updatedCopilot.innerText = `Co-pilot: ${copilotNameInput.value} is ready`;
       launchStatus.innerText = 'Shuttle is ready for launch';
       launchStatus.style.color = 'green';
+      updatedVisibilty.style.visibility = 'hidden';
       fuelStatus.innerText = 'Fuel level high enough for launch';
       cargoStatus.innerText = 'Cargo mass low enough for launch';
       event.preventDefault();
